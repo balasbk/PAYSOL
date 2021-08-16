@@ -43,14 +43,14 @@ class landingpage extends Component {
         {!this.state.ispublickey ? (
           <div
            >
-            <button>
+            {/* <button>
               <Link to="/newuser"> Generate New key</Link>
             </button>
             <br />
             <button>
               <Link to="/olduser"> Access Existing Key</Link>
-            </button>
-      
+            </button> */}
+            <Intro/>
           </div>
         ) : (
           <div>

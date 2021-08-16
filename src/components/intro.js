@@ -1,73 +1,70 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
 
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
 
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import Paper from '@material-ui/core/Paper';
+
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import { Box,Paper } from "@material-ui/core";
-import  Image from "./bg.jpg"
-import purple from '@material-ui/core/colors/purple';
-
-
-class intro extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-
-
-
-
-  render() {
+import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
+const useStyles = makeStyles((theme) => ({
+    appBar: {
+      position: 'relative',
+    },
+    layout: {
+      width: 'auto',
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
+        width: 600,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
+    },
+    paper: {
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(3),
+      padding: theme.spacing(2),
+      [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+        marginTop: theme.spacing(6),
+        marginBottom: theme.spacing(6),
+        padding: theme.spacing(3),
+      },
+    },
+}))
+function Intro() {
+    const classes = useStyles();
     return (
-    
-
-     
-        <Box m={8} >
-            <Container maxWidth="sm"  >
-              <Typography
-                component="h1"
-                variant="h2"
-                align="center"
-                color="textPrimary"
-                gutterBottom
-              >
-              PAYSOL
-              </Typography>
-              <Typography
-                variant="h5"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                Something short and leading about the collection below—its
-                contents, the creator, etc. Make it short and sweet, but not too
-                short so folks don&apos;t simply skip over it entirely.
-              </Typography>
-              <div >
-                <Grid container spacing={2} justifyContent="center">
-                  <Grid item>
-                    <Button variant="contained" color="primary">
-                      Main call to action
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Secondary action
-                    </Button>
-                  </Grid>
+        <div>
+            <main className={classes.layout}>
+        <Paper className={classes.paper}>
+          <Typography component="h1" variant="h4" align="center">
+            PAY SOL
+          </Typography>
+          <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Something short and leading about the collection below—its contents, the creator, etc.
+              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
+              entirely.
+            </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Button variant="contained" >
+                  <Link to="/newuser" > Generate New key </Link>
+                  </Button>
                 </Grid>
-              </div>
-            </Container>
-      </Box>
-    
+                <Grid item>
+                  <Button variant="contained" >
+                  <Link to="/olduser"> Access Existing Key</Link>
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
+          </Paper>
+          </main>
+        </div>
     );
-  }
 }
 
-intro.propTypes = {};
-
-export default intro;
+export default Intro;
