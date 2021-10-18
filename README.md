@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# PaySol
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+PaySol strives to facilitate people or businesses to connect and transfer crypto assets easily through a scan and pay system to enable a secured and fast transfer.
 
-In the project directory, you can run:
+### Features
+- Web based non-custodial crypto wallet
+- Enables secure and private 1:1 messaging
+- Pay by scanning QR code
+- Creating accounts KYC-free
+- Zero transaction fee charged by PaySol
 
-### `npm start`
+## Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Architecture diagram](./resources/Architecture.jpg)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Configuration
 
-### `npm test`
+For running the Server, you need to create a `.env` file with the following fields:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```env
+PUSHER_APPID = 
+PUSHER_KEY = 
+PUSHER_SECRET = 
+PUSHER_CLUSTER = 
 
-### `npm run build`
+MONGO_CONNECTION_URL =
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this application locally, clone the GitHub repo using `https://github.com/srishilesh/PaySol.git`. Then, follow the instructions as mentioned below:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Server
 
-### `npm run eject`
+- To redirect to the `/server` folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+cd server
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Install the packages:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- To run the server:
 
-## Learn More
+```bash
+node server.js
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Alternatively, you use run `npm install -g nodemon` to keep the server running continously:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+nodemon server.js
+```
 
-### Code Splitting
+### Client
+- To redirect to the `/client` folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd client
+```
 
-### Analyzing the Bundle Size
+- Install the packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+- To run the client application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run start
+```
 
-### Advanced Configuration
+## Techstack
+- [ReactJS](https://github.com/facebook/react)
+- [NodeJS](https://github.com/nodejs)
+- [MongoDB](https://github.com/mongodb/mongo)
+- [Solana Web3js](https://solana-labs.github.io/solana-web3.js/modules.html)
+- [Material-UI](material-ui.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Way forward
+- Multi-asset management
+- Build reward programs for the users
+- Build SPL token to redeem the rewards
+- Enhancing the Chat UI
+- Advertising products/services in the marketplace
+- Subscription based billing and invoicing of payments
+- Analytics and reports generation
+- Building peer-to-peer system for messaging
+- Connecting with Serum DEX
 
-### Deployment
+## Team
+- [Srishilesh P S](https://github.com/srishilesh)
+- [Harshak Krishna](https://github.com/Harshak777)
+- [Bala Kumar S](https://github.com/balasbk)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+[Apache License 2.0](./LICENSE)
